@@ -1,0 +1,45 @@
+@model HW3Admin.Models.PRODUCTS
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details Products</h1>
+
+<div>
+    <hr />
+    <div class="container">
+        <dl class="row">
+            <dt class="col-12 col-md-2">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-12 col-md-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-12 col-md-2">
+                @Html.DisplayNameFor(model => model.Descrition)
+            </dt>
+            <dd class="col-12 col-md-10">
+                @Html.DisplayFor(model => model.Descrition)
+            </dd>
+
+            <dt class="col-12 col-md-2">
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+            <dd class="col-12 col-md-10">
+                ฿@((@Model.Price).ToString("N2"))
+            </dd>
+
+            <dt class="col-12 col-md-2">
+                @Html.DisplayNameFor(model => model.ImagesPD)
+            </dt>
+            <dd class="col-12 col-md-10">
+                <p>@Model.ImagesPD</p>
+                <img src="~/images/@Model.ImagesPD" alt="@Model.Name" width="250" height="250" style="object-fit: cover;" />
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<a class="btn btn-success" asp-action="Edit" asp-route-id="@Model?.Id">Edit</a>
+<a class="btn btn-outline-secondary" asp-action="Index">Back to List</a>

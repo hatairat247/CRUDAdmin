@@ -1,0 +1,29 @@
+﻿@model IEnumerable<HW3Admin.Models.PRODUCTS>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4"><b>GENTLE MONSTER</b></h1>
+    <p>Our Product And Collaborations</p>
+</div>
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach (var item in Model)
+        {
+            <div class="col">
+                <div class="card h-100">
+                    <img src="~/images/@item.ImagesPD" class="card-img-top" alt="@item.Name">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Name</h5>
+                        <h6 class="card-text">฿@item.Price.ToString("N2")</h6>
+                        <p class="card-text">@item.Descrition</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

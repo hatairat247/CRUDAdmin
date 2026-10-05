@@ -1,0 +1,27 @@
+html {
+    font-size: 14px;
+    font-family: "Prompt", sans-serif;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+        font-family: "Prompt", sans-serif;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    font-family: "Prompt", sans-serif;
+}
+
+body {
+    margin-bottom: 60px;
+    font-family: "Prompt", sans-serif;
+    padding-top: 70px; /* ปรับให้สอดคล้องกับความสูงของ navbar */
+}
+
+h1 {
+    font-family: "Old Standard TT", serif;
+}

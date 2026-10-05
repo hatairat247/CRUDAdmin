@@ -1,0 +1,48 @@
+@model HW3Admin.Models.PRODUCTS
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Products</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descrition" class="control-label"></label>
+                <input asp-for="Descrition" class="form-control" />
+                <span asp-validation-for="Descrition" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImagesPD" class="control-label"></label>
+                <input asp-for="ImagesPD" class="form-control" type="file" accept="images/*"/>
+                <span asp-validation-for="ImagesPD" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-success" />
+
+                <a class="btn btn-outline-secondary" asp-action="Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
